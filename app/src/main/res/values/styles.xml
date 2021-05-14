@@ -1,0 +1,19 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/poppinsbold</item>
+    </style>
+
+    <style name="Toolbar.Light" parent="@style/AppTheme">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="android:fontFamily">@font/poppinsbold</item>
+        <item name="android:textStyle">bold</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/grey</item>
+    </style>
+
+</resources>
