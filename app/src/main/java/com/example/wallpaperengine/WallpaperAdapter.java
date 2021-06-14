@@ -1,5 +1,4 @@
 package com.example.wallpaperengine;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.provider.ContactsContract;
@@ -9,12 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 public class WallpaperAdapter extends ArrayAdapter<DataHandler> {
@@ -27,7 +23,6 @@ public class WallpaperAdapter extends ArrayAdapter<DataHandler> {
         this.resource = resource;
         this.dataHandlers = list;
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
@@ -42,5 +37,4 @@ public class WallpaperAdapter extends ArrayAdapter<DataHandler> {
                 .into(imageView);
         return view;
     }
-
 }
