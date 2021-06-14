@@ -1,7 +1,7 @@
 package com.example.wallpaperengine;
 
 public class DataHandler {
-    String title,thumbnail, image;
+    String title, thumbnail, image;
     DataHandler(String title, String thumbnail, String image){
         this.title= title;
         this.thumbnail = thumbnail;
