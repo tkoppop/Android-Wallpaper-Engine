@@ -1,18 +1,13 @@
 package com.example.wallpaperengine;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,11 +15,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,11 +33,9 @@ class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         listView = findViewById(R.id.list);
         dataHandlerList = new ArrayList<>();
         swipeRefreshLayout = findViewById(R.id.swipe);
-
         loadData("First");
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -57,7 +48,6 @@ class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String title,thumbnail,image;
                 title = dataHandlerList.get(position).getTitle();
-
                 image = dataHandlerList.get(position).getImage();
                 Intent intent = new Intent(getApplicationContext(), ViewWallpaper.class);
                 intent.putExtra("title", title);
@@ -65,9 +55,7 @@ class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
-
     private void loadData(String type){
         swipeRefreshLayout.setRefreshing(true);
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -86,7 +74,6 @@ class MainActivity extends AppCompatActivity {
         });
         queue.add(stringRequest);
     }
-
     private void parseJSON(String res, String type){
         String title, thumbnail, image;
         if(type.equals("Refresh")){
